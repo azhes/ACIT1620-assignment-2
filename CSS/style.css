@@ -7,11 +7,11 @@ body {
     background-color: #1f1d2e;
     color: #e0def4;
     display: grid;
-    grid-template-rows: 5rem 1fr 5rem;
-    grid-template-columns: 250px 1fr;
+    grid-template-rows: 5rem, 100rem, 5rem;
+    grid-template-columns: 5rem, 10rem, 5rem;
     grid-template-areas:
-        'so h h'
-        'so n n'
+        'd n n'
+        's no no'
         'f f f';
     gap: 5px;
     width: 100vw;
@@ -22,6 +22,13 @@ body {
 body.light {
     background-color: #faf4ed;
     color: #1f1d2e;
+}
+
+.darkLightToggle {
+    grid-area: d;
+    margin-top: 3rem;
+    margin-left: 8rem;
+    transform: scale(1.5);
 }
 
 .checkbox {
@@ -62,4 +69,58 @@ body.light {
 
 .fa-sun {
     color: #ea9d34;
+}
+
+.navbar {
+    grid-area: n;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navlist {
+    display: flex;
+    align-items: center;
+}
+
+#navitem {
+    margin-right: 20px;
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#sidebar {
+    grid-area: s;
+}
+
+#slideout {
+    border: none;
+    background-color: #1f1d2e;
+    color: #faf4ed;
+    transition: background 0.2s linear;
+    font-size: 2rem;
+    margin-top: 5rem;
+    margin-left: 2rem;
+}
+
+#slideout.light {
+    background-color: #faf4ed;
+    color: #1f1d2e;
+}
+
+#noteContainer {
+    grid-area: no;
+    margin-top: 10rem;
+}
+
+footer {
+    grid-area: f;
+    grid-row: 3;
+    grid-column: 2;
+    margin-left: 10rem;
+    margin-top: 30rem;
 }
