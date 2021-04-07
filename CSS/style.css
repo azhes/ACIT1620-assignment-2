@@ -117,6 +117,31 @@ a:link {
     margin-top: 10rem;
 }
 
+#createNote {
+    border: none;
+    background-color: #1f1d2e;
+    color: #faf4ed;
+    font-size: 2rem;
+    transition: background 0.2s linear;
+}
+
+#createNote.light {
+    background-color: #faf4ed;
+    color: #1f1d2e;
+}
+
+#createNote.hidden {
+    visibility: hidden;
+}
+
+#noteArea {
+    visibility: hidden;
+}
+
+#noteArea.visible {
+    visibility: visible;
+}
+
 footer {
     grid-area: f;
     grid-row: 3;

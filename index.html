@@ -30,14 +30,16 @@
     </nav>
     <div id="noteContainer">
         <button id="createNote">+ Create a new note</button>
-        <div id="write">
-            <label for="noteTitle">Note Title</label>
-            <input type="text" id="noteTitle"/>
+        <div id="noteArea">
+            <div id="write">
+                <label for="noteTitle">Note Title</label>
+                <input type="text" id="noteTitle"/>
+            </div>
+            <label for="noteBody">Note</label>
+            <textarea id="noteBody" rows="5" cols="50">Your note here</textarea>
+            <button id="saveButton">Save Note</button>
+            <button id="deleteButton">Delete Note</button>
         </div>
-        <label for="noteBody">Note</label>
-        <textarea id="noteBody" rows="5" cols="50">Your note here</textarea>
-        <button id="saveButton">Save Note</button>
-        <button id="deleteButton">Delete Note</button>
     </div>
     <footer class="indexfooter">
         created by or copyright or social media links footer
