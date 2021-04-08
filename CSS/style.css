@@ -93,6 +93,14 @@ a:link {
     text-decoration: none;
 }
 
+a:visited {
+    color: #ea9d34;
+}
+
+a:hover {
+    background-color: #3e8fb0;
+}
+
 #sidebar {
     grid-area: s;
 }
@@ -189,6 +197,11 @@ a:link {
 #deleteButton.light {
     background-color: #faf4ed;
     color: #1f1d2e;
+}
+
+#sidebar {
+    width: 0rem;
+    background-color:#1f1d2e
 }
 
 footer {

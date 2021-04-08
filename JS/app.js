@@ -30,10 +30,16 @@ createNote.addEventListener("click", () => {
     createNote.classList.toggle('hidden')
 })
 
+let eraseText = () => {
+    // deletes text from noteTitle and noteBody
+    document.getElementById("noteTitle").value = ''
+    document.getElementById("noteBody").value = ''
+}
+
 const saveButton = document.getElementById("saveButton")
 
 saveButton.addEventListener("click", () => {
-    // saves note title and note body in notesArray
+    // saves note title and note body in notesArray and saves notesArray in sidebar
     var noteArea = document.getElementById("noteArea")
     var createNote = document.getElementById("createNote")
     noteArea.classList.toggle('visible')
@@ -45,7 +51,11 @@ saveButton.addEventListener("click", () => {
     notesArray.push(noteTitle)
     notesArray.push(noteBody)
 
-    return(notesArray)
+    var notesList = document.getElementById("notesList")
+
+    notesList.insertAdjacentHTML('afterbegin', `<li>${notesArray[0]}</li>`)
+
+    eraseText()
 })
 
 const deleteButton = document.getElementById("deleteButton")
@@ -56,10 +66,15 @@ deleteButton.addEventListener("click", () => {
     var createNote = document.getElementById("createNote")
     noteArea.classList.toggle('visible')
     createNote.classList.toggle('hidden')
+
+    eraseText()
 })
 
-let eraseText = () => {
-    // deletes text from noteTitle and noteBody
-    document.getElementById("noteTitle").value = ''
-    document.getElementById("noteBody").value = ''
-}
+var slideout = document.getElementById("slideout")
+
+slideout.addEventListener("click", () => {
+    var sidebar = document.getElementById("sidebar")
+    sidebar.style.width == "20rem"
+
+    console.log("done")
+})
