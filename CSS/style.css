@@ -142,6 +142,52 @@ a:link {
     visibility: visible;
 }
 
+#noteArea {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+#noteTitle {
+    background-color:#6e6a86;
+}
+
+#noteTitle.light {
+    background-color: #9ccfd8
+}
+
+#noteBody {
+    background-color:#6e6a86;
+}
+
+#noteBody.light {
+    background-color: #9ccfd8
+}
+
+#saveButton {
+    border: none;
+    background-color:#1f1d2e;
+    color:#e0def4;
+    transition: background 0.2s linear;
+}
+
+#deleteButton {
+    border: none;
+    background-color:#1f1d2e;
+    color:#e0def4;
+    transition: background 0.2s linear;
+}
+
+#saveButton.light {
+    background-color: #faf4ed;
+    color: #1f1d2e;
+}
+
+#deleteButton.light {
+    background-color: #faf4ed;
+    color: #1f1d2e;
+}
+
 footer {
     grid-area: f;
     grid-row: 3;
