@@ -40,10 +40,10 @@ saveButton.addEventListener("click", () => {
     createNote.classList.toggle('hidden')
 
     var noteTitle = document.getElementById("noteTitle").value
-    var noteText = document.getElementById("noteBody").value
+    var noteBody = document.getElementById("noteBody").value
     var notesArray = []
     notesArray.push(noteTitle)
-    notesArray.push(noteText)
+    notesArray.push(noteBody)
 
     return(notesArray)
 })
@@ -57,3 +57,9 @@ deleteButton.addEventListener("click", () => {
     noteArea.classList.toggle('visible')
     createNote.classList.toggle('hidden')
 })
+
+let eraseText = () => {
+    // deletes text from noteTitle and noteBody
+    document.getElementById("noteTitle").value = ''
+    document.getElementById("noteBody").value = ''
+}
