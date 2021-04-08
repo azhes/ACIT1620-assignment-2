@@ -53,7 +53,7 @@ saveButton.addEventListener("click", () => {
 
     var notesList = document.getElementById("notesList")
 
-    notesList.insertAdjacentHTML('afterbegin', `<li>${notesArray[0]}</li>`)
+    notesList.insertAdjacentHTML('afterbegin', `<li id="notesArray">${notesArray[0]}</li>`)
 
     eraseText()
 })

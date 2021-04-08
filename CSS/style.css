@@ -199,9 +199,9 @@ a:hover {
     color: #1f1d2e;
 }
 
-#sidebar {
-    width: 0rem;
-    background-color:#1f1d2e
+#notesArray {
+    list-style: none;
+    font-size: 1.5rem;
 }
 
 footer {
