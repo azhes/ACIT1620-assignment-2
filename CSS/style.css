@@ -146,10 +146,12 @@ a:link {
     display: flex;
     flex-direction: column;
     width: 20rem;
+    transform: scale(1.5);
 }
 
 #noteTitle {
     background-color:#6e6a86;
+    transition: background 0.2s linear;
 }
 
 #noteTitle.light {
@@ -158,6 +160,7 @@ a:link {
 
 #noteBody {
     background-color:#6e6a86;
+    transition: background 0.2s linear;
 }
 
 #noteBody.light {
