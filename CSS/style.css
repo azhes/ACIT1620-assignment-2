@@ -199,9 +199,18 @@ a:hover {
     color: #1f1d2e;
 }
 
-#notesArray {
+#noteButton {
     list-style: none;
     font-size: 1.5rem;
+    border: none;
+    background-color: #1f1d2e;
+    color:#e0def4;
+    transition: background 0.2s linear;
+}
+
+#noteButton.light {
+    background-color: #faf4ed;
+    color: #1f1d2e;
 }
 
 footer {
