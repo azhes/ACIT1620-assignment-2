@@ -61,7 +61,7 @@ saveButton.addEventListener("click", () => {
 function insertNotesList(notesList, notesArray) {
     // inserts value of notesList into HTML
     var id = randId()
-    notesList.insertAdjacentHTML('afterbegin', `<li class="noteArray"><button class="noteButton" id=${id} onclick="viewNote(id,notesArray)">${notesArray[0]}</button></li>`)
+    notesList.insertAdjacentHTML('afterbegin', `<li class="noteArray"><button class="noteButton" id=${id} onclick="viewNote(id, notesArray)">${notesArray[0]}</button></li>`)
 }
 
 function randId() {

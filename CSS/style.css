@@ -147,7 +147,7 @@ a:visited {
 #notesListButton {
     border: none;
     background-color:#ea9d34;
-    color:#faf4ed;
+    color:#1f1d2e;
 }
 
 #noteContainer {
@@ -234,7 +234,7 @@ a:visited {
     font-size: 1.5rem;
     border: none;
     background-color:#ea9d34;
-    color:#e0def4;
+    color:#1f1d2e;
     transition: background 0.2s linear;
 }
 
