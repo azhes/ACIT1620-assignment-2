@@ -76,6 +76,8 @@ body.light {
     padding: 10px;
     display: flex;
     justify-content: flex-end;
+    background-color:#31748f;
+    border-radius: 25px;
 }
 
 .navlist {
@@ -91,14 +93,11 @@ body.light {
 
 a:link {
     text-decoration: none;
+    color: #e0def4;
 }
 
 a:visited {
-    color: #ea9d34;
-}
-
-a:hover {
-    background-color: #3e8fb0;
+    color: #f2e9de;
 }
 
 #sidebar {
@@ -139,15 +138,16 @@ a:hover {
 #slideout {
     border: none;
     background-color: #ea9d34;
-    color: #faf4ed;
-    transition: background 0.2s linear;
+    color:#1f1d2e;
     font-size: 2rem;
     margin-top: 5rem;
     margin-left: 2rem;
 }
 
-#slideout.light {
-    color: #1f1d2e;
+#notesListButton {
+    border: none;
+    background-color:#ea9d34;
+    color:#faf4ed;
 }
 
 #noteContainer {
@@ -229,7 +229,7 @@ a:hover {
     color: #1f1d2e;
 }
 
-#noteButton {
+.noteButton {
     list-style: none;
     font-size: 1.5rem;
     border: none;

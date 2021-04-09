@@ -6,23 +6,19 @@ const checkbox = document.getElementById('checkbox')
 
 checkbox.addEventListener('change', () => {
     // change theme
-    var slideout = document.getElementById("slideout")
     var createNote = document.getElementById("createNote")
     var saveButton = document.getElementById("saveButton")
     var deleteButton = document.getElementById("deleteButton")
     var noteTitle = document.getElementById("noteTitle")
     var noteBody = document.getElementById("noteBody")
-    // var noteButton = document.getElementById("noteButton")
     var sidebarToggle = document.getElementById("sidebarToggle")
 
     document.body.classList.toggle('light')
-    slideout.classList.toggle('light')
     createNote.classList.toggle('light')
     saveButton.classList.toggle('light')
     deleteButton.classList.toggle('light')
     noteTitle.classList.toggle('light')
     noteBody.classList.toggle('light')
-    // noteButton.classList.toggle('light')
     sidebarToggle.classList.toggle('light')
 })
 
@@ -57,10 +53,26 @@ saveButton.addEventListener("click", () => {
 
     var notesList = document.getElementById("notesList")
 
-    notesList.insertAdjacentHTML('afterbegin', `<li id="notesArray"><button id="noteButton">${notesArray[0]}</button></li>`)
+    insertNotesList(notesList, notesArray)
 
     eraseText()
 })
+
+function insertNotesList(notesList, notesArray) {
+    // inserts value of notesList into HTML
+    var id = randId()
+    notesList.insertAdjacentHTML('afterbegin', `<li class="noteArray"><button class="noteButton" id=${id} onclick="viewNote(id,notesArray)">${notesArray[0]}</button></li>`)
+}
+
+function randId() {
+    // generates a random id
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1)
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4()
+}
 
 const deleteButton = document.getElementById("deleteButton")
 
@@ -74,16 +86,20 @@ deleteButton.addEventListener("click", () => {
     eraseText()
 })
 
-// const noteButton = document.getElementById("noteButton")
+function viewNote(id, notesArray) {
+    // adds note array to noteTitle and noteBody
+    var noteTitle = document.getElementById("noteTitle")
+    var noteBody = document.getElementById("noteBody")
+    var noteButton = document.getElementById(id)
+    var createNote = document.getElementById("createNote")
+    var noteArea = document.getElementById("noteArea")
 
-// noteButton.addEventListener("click", () => {
-//     // adds noteButton array to noteTitle and noteBody
-//     var noteTitle = document.getElementById("noteTitle")
-//     var noteBody = document.getElementById("noteBody")
-//     var noteArray = noteButton.value
+    createNote.classList.toggle('hidden')
+    noteArea.classList.toggle('visible')
 
-//     console.log('hi')
-// })
+    noteTitle.value = notesArray[0]
+    noteBody.value = notesArray[1]
+}
 
 const sidebarToggle = document.getElementById("sidebarToggle")
 
