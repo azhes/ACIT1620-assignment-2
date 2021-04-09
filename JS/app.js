@@ -12,7 +12,8 @@ checkbox.addEventListener('change', () => {
     var deleteButton = document.getElementById("deleteButton")
     var noteTitle = document.getElementById("noteTitle")
     var noteBody = document.getElementById("noteBody")
-    var noteButton = document.getElementById("noteButton")
+    // var noteButton = document.getElementById("noteButton")
+    var sidebarToggle = document.getElementById("sidebarToggle")
 
     document.body.classList.toggle('light')
     slideout.classList.toggle('light')
@@ -21,7 +22,8 @@ checkbox.addEventListener('change', () => {
     deleteButton.classList.toggle('light')
     noteTitle.classList.toggle('light')
     noteBody.classList.toggle('light')
-    noteButton.classList.toggle('light')
+    // noteButton.classList.toggle('light')
+    sidebarToggle.classList.toggle('light')
 })
 
 createNote.addEventListener("click", () => {
@@ -72,13 +74,22 @@ deleteButton.addEventListener("click", () => {
     eraseText()
 })
 
-const noteButton = document.getElementById("noteButton")
+// const noteButton = document.getElementById("noteButton")
 
-noteButton.addEventListener("click", () => {
-    // adds noteButton array to noteTitle and noteBody
-    var noteTitle = document.getElementById("noteTitle")
-    var noteBody = document.getElementById("noteBody")
-    var noteArray = noteButton.value
+// noteButton.addEventListener("click", () => {
+//     // adds noteButton array to noteTitle and noteBody
+//     var noteTitle = document.getElementById("noteTitle")
+//     var noteBody = document.getElementById("noteBody")
+//     var noteArray = noteButton.value
 
-    console.log('hi')
+//     console.log('hi')
+// })
+
+const sidebarToggle = document.getElementById("sidebarToggle")
+
+sidebarToggle.addEventListener("click", () => {
+    // hides and shows the sidebar on click
+    var sidebar = document.getElementById("sidebar")
+    sidebar.classList.toggle('hidden')
+    sidebarToggle.classList.toggle('moved')
 })

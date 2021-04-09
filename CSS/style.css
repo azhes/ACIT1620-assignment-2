@@ -8,11 +8,11 @@ body {
     color: #e0def4;
     display: grid;
     grid-template-rows: 5rem, 100rem, 5rem;
-    grid-template-columns: 5rem, 10rem, 5rem;
+    grid-template-columns: 5rem, 10rem, 5rem, 5rem;
     grid-template-areas:
         'd n n'
         's no no'
-        'f f f';
+        's f f';
     gap: 5px;
     width: 100vw;
     height: 100vh;
@@ -26,8 +26,8 @@ body.light {
 
 .darkLightToggle {
     grid-area: d;
-    margin-top: 3rem;
-    margin-left: 8rem;
+    margin-top: 1.5rem;
+    margin-left: 12rem;
     transform: scale(1.5);
 }
 
@@ -103,11 +103,42 @@ a:hover {
 
 #sidebar {
     grid-area: s;
+    border-radius: 25px;
+    padding: 5px;
+    width: 20rem;
+    height: 50rem;
+    background-color:#ea9d34;
+}
+
+#sidebar.hidden {
+    visibility: hidden;
+}
+
+#sidebarToggle {
+    border-style: none;
+    background-color:#1f1d2e;
+    color: #faf4ed;
+    font-size: 1.5rem;
+    margin-left: 20rem;
+    grid-column: 1;
+    grid-row: 2;
+    width: 3rem;
+    height: 3rem;
+    transition: background 0.2s linear;
+}
+
+#sidebarToggle.light {
+    background-color:#faf4ed;
+    color: #1f1d2e;
+}
+
+#sidebarToggle.moved {
+    margin-left: 2rem;
 }
 
 #slideout {
     border: none;
-    background-color: #1f1d2e;
+    background-color: #ea9d34;
     color: #faf4ed;
     transition: background 0.2s linear;
     font-size: 2rem;
@@ -116,7 +147,6 @@ a:hover {
 }
 
 #slideout.light {
-    background-color: #faf4ed;
     color: #1f1d2e;
 }
 
@@ -203,13 +233,12 @@ a:hover {
     list-style: none;
     font-size: 1.5rem;
     border: none;
-    background-color: #1f1d2e;
+    background-color:#ea9d34;
     color:#e0def4;
     transition: background 0.2s linear;
 }
 
 #noteButton.light {
-    background-color: #faf4ed;
     color: #1f1d2e;
 }
 
