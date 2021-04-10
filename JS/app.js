@@ -47,6 +47,10 @@ saveButton.addEventListener("click", () => {
     noteArea.classList.toggle('visible')
     createNote.classList.toggle('hidden')
 
+    if (closeNoteButton.className = 'visible') {
+        closeNoteButton.classList.toggle('visible')
+    }
+
     var noteTitle = document.getElementById("noteTitle").value
     var noteBody = document.getElementById("noteBody").value
 
@@ -81,8 +85,13 @@ deleteButton.addEventListener("click", () => {
     // closes note taking area without saving the note
     var noteArea = document.getElementById("noteArea")
     var createNote = document.getElementById("createNote")
+    
     noteArea.classList.toggle('visible')
     createNote.classList.toggle('hidden')
+
+    if (closeNoteButton.className = 'visible') {
+        closeNoteButton.classList.toggle('visible')
+    }
 
     eraseText()
 })
