@@ -267,6 +267,7 @@ footer {
 @media (min-width: 360px) and (max-width: 740px) {
     /* Galaxy S9/S9+ Screen Size */
     body {
+        width: 360px;
         background-color: #1f1d2e;
         color: #e0def4;
         display: grid;
@@ -284,17 +285,23 @@ footer {
     .darkLightToggle {
         margin-left: 0rem;
         padding: 1rem;
+        grid-column: 1;
+        margin-left: 5rem;
     }
 
     .navbar {
         justify-content: flex-start;
+        grid-column: 1;
+        margin-left: 6rem;
     }
 
     #sidebar {
+        grid-column: 1;
         height: 6rem;
         width: 360px;
         display: grid;
         grid-template-rows: 3rem;
+        margin-left: 6rem;
         margin-top: 2rem;
         padding: 0;
     }
@@ -324,7 +331,9 @@ footer {
     }
 
     footer {
-        margin-left: 0;
+        grid-column: 1;
+        width: 15rem;
+        margin-left: 3rem;
         margin-right: 5rem;
         margin-top: 26rem;
     }
