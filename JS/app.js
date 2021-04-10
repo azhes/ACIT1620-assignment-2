@@ -4,16 +4,17 @@
 */
 const checkbox = document.getElementById('checkbox')
 var notesArray = {}
+const closeNoteButton = document.getElementById("closeNoteButton")
+const noteArea = document.getElementById("noteArea")
+const createNote = document.getElementById("createNote")
 
 checkbox.addEventListener('change', () => {
     // change theme
-    var createNote = document.getElementById("createNote")
     var saveButton = document.getElementById("saveButton")
     var deleteButton = document.getElementById("deleteButton")
     var noteTitle = document.getElementById("noteTitle")
     var noteBody = document.getElementById("noteBody")
     var sidebarToggle = document.getElementById("sidebarToggle")
-    var closeNoteButton = document.getElementById("closeNoteButton")
 
     document.body.classList.toggle('light')
     createNote.classList.toggle('light')
@@ -43,8 +44,6 @@ const saveButton = document.getElementById("saveButton")
 
 saveButton.addEventListener("click", () => {
     // saves note title and note body in notesArray and saves notesArray in sidebar
-    var noteArea = document.getElementById("noteArea")
-    var createNote = document.getElementById("createNote")
     noteArea.classList.toggle('visible')
     createNote.classList.toggle('hidden')
 
@@ -94,16 +93,26 @@ function viewNote(id) {
     var displayBody = document.getElementById("noteBody")
     var noteButton = document.getElementById(id)
     var createNote = document.getElementById("createNote")
-    var noteArea = document.getElementById("noteArea")
     var noteTitle = noteButton.textContent
+
 
     createNote.classList.toggle('hidden')
     noteArea.classList.toggle('visible')
 
     displayTitle.value = noteTitle
     displayBody.value = notesArray[noteTitle]
-    console.log(notesArray[noteTitle])
+    
+    closeNoteButton.classList.toggle('visible')
 }
+
+closeNoteButton.addEventListener("click", () => {
+    // hides the note text areas on click
+    noteArea.classList.toggle('visible')
+    createNote.classList.toggle('hidden')
+    closeNoteButton.classList.toggle('visible')
+
+    eraseText()
+})
 
 const sidebarToggle = document.getElementById("sidebarToggle")
 
