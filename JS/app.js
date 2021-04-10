@@ -3,6 +3,7 @@
     - use toggle method to switch between dark mode and light mode themes
 */
 const checkbox = document.getElementById('checkbox')
+var notesArray = {}
 
 checkbox.addEventListener('change', () => {
     // change theme
@@ -12,6 +13,7 @@ checkbox.addEventListener('change', () => {
     var noteTitle = document.getElementById("noteTitle")
     var noteBody = document.getElementById("noteBody")
     var sidebarToggle = document.getElementById("sidebarToggle")
+    var closeNoteButton = document.getElementById("closeNoteButton")
 
     document.body.classList.toggle('light')
     createNote.classList.toggle('light')
@@ -20,6 +22,7 @@ checkbox.addEventListener('change', () => {
     noteTitle.classList.toggle('light')
     noteBody.classList.toggle('light')
     sidebarToggle.classList.toggle('light')
+    closeNoteButton.classList.toggle('light')
 })
 
 createNote.addEventListener("click", () => {
@@ -47,21 +50,20 @@ saveButton.addEventListener("click", () => {
 
     var noteTitle = document.getElementById("noteTitle").value
     var noteBody = document.getElementById("noteBody").value
-    var notesArray = []
-    notesArray.push(noteTitle)
-    notesArray.push(noteBody)
+
+    notesArray[noteTitle] = noteBody
 
     var notesList = document.getElementById("notesList")
 
-    insertNotesList(notesList, notesArray)
+    insertNotesList(notesList, noteTitle)
 
     eraseText()
 })
 
-function insertNotesList(notesList, notesArray) {
+function insertNotesList(notesList, noteTitle) {
     // inserts value of notesList into HTML
     var id = randId()
-    notesList.insertAdjacentHTML('afterbegin', `<li class="noteArray"><button class="noteButton" id=${id} onclick="viewNote(id, notesArray)">${notesArray[0]}</button></li>`)
+    notesList.insertAdjacentHTML('afterbegin', `<li class="noteButton" id=${id} onclick="viewNote(id, noteTitle)">${noteTitle}</li>`)
 }
 
 function randId() {
@@ -86,19 +88,21 @@ deleteButton.addEventListener("click", () => {
     eraseText()
 })
 
-function viewNote(id, notesArray) {
+function viewNote(id) {
     // adds note array to noteTitle and noteBody
-    var noteTitle = document.getElementById("noteTitle")
-    var noteBody = document.getElementById("noteBody")
+    var displayTitle = document.getElementById("noteTitle")
+    var displayBody = document.getElementById("noteBody")
     var noteButton = document.getElementById(id)
     var createNote = document.getElementById("createNote")
     var noteArea = document.getElementById("noteArea")
+    var noteTitle = noteButton.textContent
 
     createNote.classList.toggle('hidden')
     noteArea.classList.toggle('visible')
 
-    noteTitle.value = notesArray[0]
-    noteBody.value = notesArray[1]
+    displayTitle.value = noteTitle
+    displayBody.value = notesArray[noteTitle]
+    console.log(notesArray[noteTitle])
 }
 
 const sidebarToggle = document.getElementById("sidebarToggle")

@@ -229,6 +229,18 @@ a:visited {
     color: #1f1d2e;
 }
 
+#closeNoteButton {
+    border: none;
+    background-color:#1f1d2e;
+    color:#e0def4;
+    transition: background 0.2s linear;
+}
+
+#closeNoteButton.light {
+    background-color: #faf4ed;
+    color: #1f1d2e;
+}
+
 .noteButton {
     list-style: none;
     font-size: 1.5rem;
