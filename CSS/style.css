@@ -174,17 +174,14 @@ a:visited {
 
 #noteArea {
     visibility: hidden;
-}
-
-#noteArea.visible {
-    visibility: visible;
-}
-
-#noteArea {
     display: flex;
     flex-direction: column;
     width: 20rem;
     transform: scale(1.5);
+}
+
+#noteArea.visible {
+    visibility: visible;
 }
 
 #noteTitle {
@@ -265,4 +262,70 @@ footer {
     grid-column: 2;
     margin-left: 10rem;
     margin-top: 30rem;
+}
+
+@media (min-width: 360px) and (max-width: 740px) {
+    /* Galaxy S9/S9+ Screen Size */
+    body {
+        background-color: #1f1d2e;
+        color: #e0def4;
+        display: grid;
+        grid-template-rows: 5rem, 100rem, 5rem;
+        grid-template-columns: 5rem, 10rem, 5rem, 5rem;
+        grid-template-areas:
+            'd n n'
+            'to s s'
+            'no no no'
+            'f f f';
+        gap: 5px;
+        transition: background 0.2s linear;
+    }
+
+    .darkLightToggle {
+        margin-left: 0rem;
+        padding: 1rem;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+    }
+
+    #sidebar {
+        height: 6rem;
+        width: 360px;
+        display: grid;
+        grid-template-rows: 3rem;
+        margin-top: 2rem;
+        padding: 0;
+    }
+
+    #sidebarToggle {
+        grid-area: to;
+        margin-left: 0;
+        margin-top: 3rem;
+    }
+
+    #slideout {
+        grid-row: 1;
+        z-index: 2;
+        margin-top: 0;
+        margin-left: 0;
+        grid-column: 
+    }
+
+    #noteContainer {
+        margin-top: 3rem;
+    }
+
+    #noteArea {
+        margin-left: 5rem;
+        width: 10rem;
+        transform: scale(1.5);
+    }
+
+    footer {
+        margin-left: 0;
+        margin-right: 5rem;
+        margin-top: 26rem;
+    }
 }
